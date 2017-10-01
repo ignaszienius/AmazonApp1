@@ -19,7 +19,7 @@ if(isset($_POST['importSubmit'])){
             while(($line = fgetcsv($csvFile)) !== FALSE){
                
                     //insert member data into database
-                    $db->query("INSERT INTO suppressed (SKU1, SKU2, SKU3, SKU4, name, ASIN, alert_name, alert_type, field_name, internal_name, correct_value, explanation, date_value) VALUES ('".$line[0]."','".$line[1]."','".$line[2]."','".$line[3]."','".$line[4]."','".$line[5]."','".$line[6]."','".$line[7]."','".$line[8]."','".$line[9]."','".$line[10]."')");
+                    $db->query("INSERT INTO suppressed (SKU, name, ASIN, alert_name, alert_type, field_name, internal_name, correct_value, explanation, date_value) VALUES ('".$line[0]."','".$line[1]."','".$line[2]."','".$line[3]."','".$line[4]."','".$line[5]."','".$line[6]."','".$line[7]."','".$line[8]."','".$line[9]."')");
                 }
             }
             

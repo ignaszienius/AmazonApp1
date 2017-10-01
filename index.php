@@ -6,7 +6,7 @@ if(!empty($_GET['status'])){
     switch($_GET['status']){
         case 'succ':
             $statusMsgClass = 'alert-success';
-            $statusMsg = 'Members data has been inserted successfully.';
+            $statusMsg = 'CSV report has been inserted successfully.';
             break;
         case 'err':
             $statusMsgClass = 'alert-danger';
@@ -32,12 +32,11 @@ if(!empty($_GET['status'])){
     <?php if(!empty($statusMsg)){
         echo '<div class="alert '.$statusMsgClass.'">'.$statusMsg.'</div>';
     } ?>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            CSV import
-            <a href="javascript:void(0);" onclick="$('#importFrm').slideToggle();">Import CSV report</a>
+    <div class="card">
+        <div class="card-header">
+            <h1>CSV import</h1>
         </div>
-        <div class="panel-body">
+        <div class="card-body">
             <form action="importData.php" method="post" enctype="multipart/form-data" id="importFrm">
                 <input type="file" name="file" />
                 <input type="submit" class="btn btn-primary" name="importSubmit" value="IMPORT">
