@@ -45,6 +45,10 @@ if(!empty($_GET['status'])){
                 <thead>
                     <tr>
                       <th>SKU</th>
+                      <th>SKU0</th>
+                      <th>SKU1</th>
+                      <th>SKU2</th>
+                      <th>SKU3</th>
                       <th>Product name</th>
                       <th>ASIN</th>
                       <th>Alert name</th>
@@ -64,6 +68,10 @@ if(!empty($_GET['status'])){
                         while($row = $query->fetch_assoc()){ ?>
                     <tr>
                       <td><?php echo $row['SKU']; ?></td>
+                      <td><?php echo $row['SKU0']; ?></td>
+                      <td><?php echo $row['SKU1']; ?></td>
+                      <td><?php echo $row['SKU2']; ?></td>
+                      <td><?php echo $row['SKU3']; ?></td>
                       <td><?php echo $row['name']; ?></td>
                       <td><?php echo $row['ASIN']; ?></td>
                       <td><?php echo $row['alert_name']; ?></td>
@@ -75,7 +83,7 @@ if(!empty($_GET['status'])){
                       <td><?php echo $row['date_value']; ?></td>
                     </tr>
                     <?php } }else{ ?>
-                    <tr><td colspan="10">No records found...</td></tr>
+                    <tr><td colspan="14">No records found...</td></tr>
                     <?php } ?>
                 </tbody>
             </table>
