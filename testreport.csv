@@ -1,0 +1,6 @@
+TemplateType=Universal,,,,,,,,,
+SKU,Product Name,ASIN,Alert Name,Alert Type,Field Name,Internal Field Name,Corrected Value,Explanation,Last Updated
+sku,product_name,asin,alert_name,alert_type,field_name,internal_field_name,new_value,explanation,last_updated
+MensTshirt-black-S-BMDW,pin_up_summer T-Shirt per Uomini Small,B01KI69GA0,Suppressed,Missing,Color Map,color_map,nero, is important for helping customers find your product.,9/25/17 5:15:16 PM UTC
+MensTshirt-black-S-BMDW,pin_up_summer T-Shirt per Uomini Small,B01KI69GA0,Suppressed,Missing,Color,color_name,nero, is important for helping customers find your product.,9/25/17 5:15:16 PM UTC
+MensTshirt-black-S-BMDW,pin_up_summer T-Shirt per Uomini Small,B01KI69GA0,Suppressed,Missing,Size,size_name,small, is important for helping customers find your product.,9/25/17 5:15:13 PM UTC
