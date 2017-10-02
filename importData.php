@@ -18,13 +18,14 @@ if(isset($_POST['importSubmit'])){
             
             //parse data from csv file line by line
             while(($line = fgetcsv($csvFile)) !== FALSE){
-                    //explode SKU into pieces
-                    $array=explode('-', $line[0]);
-                    foreach ($array as $key=>$item) {
-                    $db->query("INSERT INTO suppressed (SKU".$key.") VALUES ('".$item."')");
-                    }
                     //insert data into database
                     $db->query("INSERT INTO suppressed (SKU, name, ASIN, alert_name, alert_type, field_name, internal_name, correct_value, explanation, date_value) VALUES ('".$line[0]."','".$line[1]."','".$line[2]."','".$line[3]."','".$line[4]."','".$line[5]."','".$line[6]."','".$line[7]."','".$line[8]."','".$line[9]."')");
+                    //explode SKU into pieces and update into already created rows
+                    $array=explode('-', $line[0]);
+                    foreach ($array as $key=>$item) {
+                    $db->query("UPDATE suppressed SET SKU".$key." = '".$item."'"); 
+                    }
+
                 }
             }
             
