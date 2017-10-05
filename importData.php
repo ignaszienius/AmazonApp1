@@ -25,7 +25,16 @@ if(isset($_POST['importSubmit'])){
                     foreach ($array as $key=>$item) {
                     $db->query("UPDATE suppressed SET SKU".$key." = '".$item."'"); 
                     }
-
+                    //check alert type and fill correct value into db
+                    $lol1 = $db->query("SELECT DISTINCT internal_name FROM suppressed");
+                    $array1 =  mysqli_fetch_array($lol1);
+                    if ($array1[0] == "color_map") {
+                        $lol2 = $db->query("SELECT DISTINCT SKU1 FROM suppressed");
+                        $array2 =  mysqli_fetch_array($lol2);
+                        if ($array2[0] == "black") {
+                            $db->query("UPDATE suppressed SET correct_value = 'black'");
+                        }
+                    }
                 }
             }
             
