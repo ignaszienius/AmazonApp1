@@ -63,7 +63,7 @@ if(!empty($_GET['status'])){
                 <tbody>
                 <?php
                     //get records from database
-                    $query = $db->query("SELECT * FROM suppressed ORDER BY SKU DESC");
+                    $query = $db->query("SELECT * FROM suppressed");
                     if($query->num_rows > 0){ 
                         while($row = $query->fetch_assoc()){ ?>
                     <tr>
