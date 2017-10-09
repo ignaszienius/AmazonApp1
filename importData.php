@@ -26,22 +26,22 @@ if(isset($_POST['importSubmit'])){
                     $db->query("UPDATE suppressed SET SKU".$key." = '".$item."'"); 
                     }
                     //check alert type and fill correct value into db
-                    $lol1 = $db->query("SELECT DISTINCT internal_name FROM suppressed");
+                    $lol1 = $db->query("SELECT  internal_name FROM suppressed");
                     $array1 =  mysqli_fetch_array($lol1);
+                    $lol2 = $db->query("SELECT  SKU1 FROM suppressed");
+                    $array2 =  mysqli_fetch_array($lol2);
 
                     switch ($array1[0]) {
                         case "color_map":
-                        $lol2 = $db->query("SELECT DISTINCT SKU1 FROM suppressed");
-                        $array2 =  mysqli_fetch_array($lol2);
-                        switch ($array2[0]) {
-                            case 'black':
-                                $db->query("UPDATE suppressed SET correct_value = 'black'");
-                                break;
+                        switch ($array2[0]) { 
                             case 'white':
                                 $db->query("UPDATE suppressed SET correct_value = 'white'");
                                 break;
                             case 'grey':
                                 $db->query("UPDATE suppressed SET correct_value = 'grey'");
+                                break;
+                            case 'black':
+                                $db->query("UPDATE suppressed SET correct_value = 'black'");
                                 break;
                             case 'red':
                                 $db->query("UPDATE suppressed SET correct_value = 'red'");
@@ -63,20 +63,19 @@ if(isset($_POST['importSubmit'])){
                                 break;        
                             default:
                                 break;
+
                         }
 
                         case "color_name":
-                        $lol2 = $db->query("SELECT DISTINCT SKU1 FROM suppressed");
-                        $array2 =  mysqli_fetch_array($lol2);
                         switch ($array2[0]) {
-                            case 'black':
-                                $db->query("UPDATE suppressed SET correct_value = 'black'");
-                                break;
                             case 'white':
                                 $db->query("UPDATE suppressed SET correct_value = 'white'");
                                 break;
                             case 'grey':
                                 $db->query("UPDATE suppressed SET correct_value = 'grey'");
+                                break;
+                            case 'black':
+                                $db->query("UPDATE suppressed SET correct_value = 'black'");
                                 break;
                             case 'red':
                                 $db->query("UPDATE suppressed SET correct_value = 'red'");
