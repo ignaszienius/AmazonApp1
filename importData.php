@@ -23,7 +23,7 @@ if(isset($_POST['importSubmit'])){
                     //explode SKU into pieces and update into already created rows
                     $array=explode('-', $line[0]);
                     foreach ($array as $key=>$item) {
-                    $db->query("UPDATE suppressed SET SKU".$key." = '".$item."'"); 
+                    $db->query("UPDATE suppressed SET SKU".$key." = '".$item."' WHERE ASIN = '".$line[2]."' "); 
                     }
                     //check alert type and fill correct value into db
                     $lol1 = $db->query("SELECT  internal_name FROM suppressed");
@@ -35,31 +35,31 @@ if(isset($_POST['importSubmit'])){
                         case "color_map":
                         switch ($array2[0]) { 
                             case 'white':
-                                $db->query("UPDATE suppressed SET correct_value = 'white'");
+                                $db->query("UPDATE suppressed SET correct_value = 'white' WHERE SKU1 = 'white'");
                                 break;
                             case 'grey':
-                                $db->query("UPDATE suppressed SET correct_value = 'grey'");
+                                $db->query("UPDATE suppressed SET correct_value = 'grey' WHERE SKU1 = 'grey'");
                                 break;
                             case 'black':
-                                $db->query("UPDATE suppressed SET correct_value = 'black'");
+                                $db->query("UPDATE suppressed SET correct_value = 'black' WHERE SKU1 = 'black'");
                                 break;
                             case 'red':
-                                $db->query("UPDATE suppressed SET correct_value = 'red'");
+                                $db->query("UPDATE suppressed SET correct_value = 'red' WHERE SKU1 = 'white'");
                                 break;
                             case 'yellow':
-                                $db->query("UPDATE suppressed SET correct_value = 'yellow'");
+                                $db->query("UPDATE suppressed SET correct_value = 'yellow' WHERE SKU1 = 'white'");
                                 break;
                             case 'pink':
-                                $db->query("UPDATE suppressed SET correct_value = 'pink'");
+                                $db->query("UPDATE suppressed SET correct_value = 'pink' WHERE SKU1 = 'white'");
                                 break;
                             case 'dark grey':
-                                $db->query("UPDATE suppressed SET correct_value = 'dark grey'");
+                                $db->query("UPDATE suppressed SET correct_value = 'dark grey' WHERE SKU1 = 'white'");
                                 break;
                             case 'navy blue':
-                                $db->query("UPDATE suppressed SET correct_value = 'navy blue'");
+                                $db->query("UPDATE suppressed SET correct_value = 'navy blue' WHERE SKU1 = 'white'");
                                 break;
                             case 'purple':
-                                $db->query("UPDATE suppressed SET correct_value = 'purple'");
+                                $db->query("UPDATE suppressed SET correct_value = 'purple' WHERE SKU1 = 'white'");
                                 break;        
                             default:
                                 break;
@@ -69,31 +69,31 @@ if(isset($_POST['importSubmit'])){
                         case "color_name":
                         switch ($array2[0]) {
                             case 'white':
-                                $db->query("UPDATE suppressed SET correct_value = 'white'");
+                                $db->query("UPDATE suppressed SET correct_value = 'white' WHERE SKU1 = 'white'");
                                 break;
                             case 'grey':
-                                $db->query("UPDATE suppressed SET correct_value = 'grey'");
+                                $db->query("UPDATE suppressed SET correct_value = 'grey' WHERE SKU1 = 'grey'");
                                 break;
                             case 'black':
-                                $db->query("UPDATE suppressed SET correct_value = 'black'");
+                                $db->query("UPDATE suppressed SET correct_value = 'black' WHERE SKU1 = 'black'");
                                 break;
                             case 'red':
-                                $db->query("UPDATE suppressed SET correct_value = 'red'");
+                                $db->query("UPDATE suppressed SET correct_value = 'red' WHERE SKU1 = 'white'");
                                 break;
                             case 'yellow':
-                                $db->query("UPDATE suppressed SET correct_value = 'yellow'");
+                                $db->query("UPDATE suppressed SET correct_value = 'yellow' WHERE SKU1 = 'white'");
                                 break;
                             case 'pink':
-                                $db->query("UPDATE suppressed SET correct_value = 'pink'");
+                                $db->query("UPDATE suppressed SET correct_value = 'pink' WHERE SKU1 = 'white'");
                                 break;
                             case 'dark grey':
-                                $db->query("UPDATE suppressed SET correct_value = 'dark grey'");
+                                $db->query("UPDATE suppressed SET correct_value = 'dark grey' WHERE SKU1 = 'white'");
                                 break;
                             case 'navy blue':
-                                $db->query("UPDATE suppressed SET correct_value = 'navy blue'");
+                                $db->query("UPDATE suppressed SET correct_value = 'navy blue' WHERE SKU1 = 'white'");
                                 break;
                             case 'purple':
-                                $db->query("UPDATE suppressed SET correct_value = 'purple'");
+                                $db->query("UPDATE suppressed SET correct_value = 'purple' WHERE SKU1 = 'white'");
                                 break;        
                             default:
                                 break;
