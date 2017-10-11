@@ -31,6 +31,7 @@ if(isset($_POST['importSubmit'])){
                     $lol2 = $db->query("SELECT  SKU1 FROM suppressed");
                     $array2 =  mysqli_fetch_array($lol2);
 
+                    
                     switch ($array1[0]) {
                         case "color_map":
                         switch ($array2[0]) { 
@@ -60,7 +61,7 @@ if(isset($_POST['importSubmit'])){
                                 break;
                             case 'purple':
                                 $db->query("UPDATE suppressed SET correct_value = 'purple'");
-                                break;        
+                                break;       
                             default:
                                 break;
 
