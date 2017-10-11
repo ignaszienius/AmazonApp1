@@ -23,6 +23,7 @@ if(!empty($_GET['status'])){
 }
 ?>
 <head>
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
@@ -45,10 +46,6 @@ if(!empty($_GET['status'])){
                 <thead>
                     <tr>
                       <th>SKU</th>
-                      <th>SKU0</th>
-                      <th>SKU1</th>
-                      <th>SKU2</th>
-                      <th>SKU3</th>
                       <th>Product name</th>
                       <th>ASIN</th>
                       <th>Alert name</th>
@@ -68,10 +65,6 @@ if(!empty($_GET['status'])){
                         while($row = $query->fetch_assoc()){ ?>
                     <tr>
                       <td><?php echo $row['SKU']; ?></td>
-                      <td><?php echo $row['SKU0']; ?></td>
-                      <td><?php echo $row['SKU1']; ?></td>
-                      <td><?php echo $row['SKU2']; ?></td>
-                      <td><?php echo $row['SKU3']; ?></td>
                       <td><?php echo $row['name']; ?></td>
                       <td><?php echo $row['ASIN']; ?></td>
                       <td><?php echo $row['alert_name']; ?></td>
