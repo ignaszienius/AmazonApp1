@@ -3,9 +3,7 @@
 include 'dbConfig.php';
 
 if(isset($_POST['importSubmit'])) {
-
-<<<<<<< HEAD
-                    
+                   /* 
                     switch ($array1[0]) {
                         case "color_map":
                         switch ($array2[0]) { 
@@ -37,8 +35,9 @@ if(isset($_POST['importSubmit'])) {
                                 $db->query("UPDATE suppressed SET correct_value = 'purple'");
                                 break;       
                             default:
-                                break;
-=======
+                                break;}
+                                */
+                           
 	//validate whether uploaded file is a csv file
 	$csvMimes = array('text/x-comma-separated-values', 'text/comma-separated-values', 'application/octet-stream', 'application/vnd.ms-excel', 'application/x-csv', 'text/x-csv', 'text/csv', 'application/csv', 'application/excel', 'application/vnd.msexcel', 'text/plain');
 	if (!empty($_FILES['file']['name']) && in_array($_FILES['file']['type'], $csvMimes)) {
@@ -47,7 +46,7 @@ if(isset($_POST['importSubmit'])) {
 			$db->query("TRUNCATE suppressed");
 			//open uploaded csv file with read only mode
 			$csvFile = fopen($_FILES['file']['tmp_name'], 'r');
->>>>>>> 76e2ec0e175ba8014787254f6b9fa4bf4064be81
+
 
 			//skip first line
 			fgetcsv($csvFile);
@@ -63,13 +62,14 @@ if(isset($_POST['importSubmit'])) {
 			fclose($csvFile);
 
 			$status = 'succ';
-		} else {
+		  } else {
 			$status = 'err';
-		}
-	} else {
+		   }
+	       } else {
 		$status = 'invalid_file';
-	}
-
+	     
+          }
+    
 }
 //redirect to the listing page
 header("Location: index.php?status=".$status);
