@@ -9,7 +9,8 @@ $dbName = 'suppressed';
 $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
 
 // UTF8 charsetas
-$db->set_charset("utf8");
+//$db->set_charset("utf8");
+mysqli_set_charset($db,"utf8");
 
 if ($db->connect_error) {
     die("Unable to connect database: " . $db->connect_error);

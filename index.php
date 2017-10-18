@@ -40,11 +40,14 @@ if(!empty($_GET['status'])){
         <div class="card-header">
             <h1>CSV import</h1>
         </div>
-        <div class="card-body">
-            <form action="importData.php" method="post" enctype="multipart/form-data" id="importFrm">
-                <input type="file" name="file" />
-                <input type="submit" class="btn btn-primary" name="importSubmit" value="IMPORT">
-            </form>
+          <div class="card-body">
+              <form action="importData.php" method="post" enctype="multipart/form-data" id="importFrm">
+                  <input type="file" name="file" />
+                  <input type="submit" class="btn btn-primary" name="importSubmit" value="IMPORT">
+              </form>
+              <form action="exportData.php" method="post" enctype="multipart/form-data" id="exportFrm">
+                  <input type="submit" class="btn btn-primary" name="exportSubmit" value="EXPORT">
+              </form> 
             <table class="table table-bordered">
                 <thead>
                     <tr>

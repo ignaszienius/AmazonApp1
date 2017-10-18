@@ -34,5 +34,6 @@ if(isset($_POST['importSubmit'])) {
 		$status = 'invalid_file';  
     }  
 }
+
 //redirect to the listing page
 header("Location: index.php?status=".$status);
